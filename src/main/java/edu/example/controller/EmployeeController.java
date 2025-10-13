@@ -2,9 +2,9 @@ package edu.example.controller;
 
 
 import edu.example.dto.Employee;
+import edu.example.entity.EmployeeEntity;
+import edu.example.service.EmployeeService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -12,11 +12,21 @@ import java.util.List;
 @RequestMapping("/employee")
 public class EmployeeController {
 
-    List<Employee> employee1=new ArrayList();
+    final EmployeeService service;
+
+    EmployeeController(EmployeeService service){
+        this.service=service;
+    }
 
     @PostMapping
     public void  addEmployee( @RequestBody Employee employee){
-        employee1.add(employee);
+         service.addEmployee(employee);
+    }
+
+    @GetMapping
+    public List<EmployeeEntity> getEmployee(){
+       return service.getEmployee();
     }
 
 }
+

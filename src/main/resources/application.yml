@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/emp_system
+    username: root
+    password: 99990000
+  jpa:
+   hibernate:
+     ddl-auto: update
+   show-sql: true
