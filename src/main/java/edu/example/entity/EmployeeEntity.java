@@ -2,9 +2,7 @@ package edu.example.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Data
@@ -22,4 +20,6 @@ public class EmployeeEntity {
     private String email;
     private String departmentId;
     private String roleId;
+
+
 }
