@@ -31,4 +31,10 @@ public class RoleServiceImpl implements RoleService{
         all.forEach(roleEntity ->roleList.add(new ObjectMapper().convertValue(all,Role.class)));
         return roleList;
     }
+
+    @Override
+    public String deleteById(Long id) {
+        repository.deleteById(id);
+        return "Delete Success";
+    }
 }

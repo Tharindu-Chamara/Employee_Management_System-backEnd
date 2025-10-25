@@ -4,10 +4,7 @@ import edu.example.dto.Department;
 import edu.example.service.DepartmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,6 +23,11 @@ public class DepartmentController {
     @GetMapping("/get-departments")
     public List<Department> getAllDepartments(){
        return service.getAllDepartments();
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteDepartmentId(@PathVariable Long id){
+       return service.deleteDepartmentById(id);
     }
 
 

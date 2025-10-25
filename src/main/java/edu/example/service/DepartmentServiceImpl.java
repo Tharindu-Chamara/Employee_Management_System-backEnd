@@ -31,4 +31,10 @@ public class DepartmentServiceImpl implements DepartmentService{
                 list.add(mapper.convertValue(all,Department.class)));
         return list;
     }
+
+    @Override
+    public String deleteDepartmentById(Long id) {
+        repository.deleteById(id);
+        return "Deleted";
+    }
 }
