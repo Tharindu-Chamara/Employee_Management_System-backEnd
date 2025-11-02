@@ -1,9 +1,10 @@
-package edu.example.service;
+package edu.example.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.example.dto.Department;
 import edu.example.entity.DepartmentEntity;
 import edu.example.repository.DepartmentRepository;
+import edu.example.service.DepartmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-public class DepartmentServiceImpl implements DepartmentService{
+public class DepartmentServiceImpl implements DepartmentService {
 
     private final DepartmentRepository repository;
     private final ObjectMapper mapper;

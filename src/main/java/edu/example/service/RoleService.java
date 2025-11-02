@@ -8,8 +8,8 @@ public interface RoleService {
 
     void addRole(Role role);
 
-
     List<Role> getRole();
 
     String deleteById(Long id);
+
 }

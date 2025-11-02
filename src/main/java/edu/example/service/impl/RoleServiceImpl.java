@@ -1,9 +1,10 @@
-package edu.example.service;
+package edu.example.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.example.dto.Role;
 import edu.example.entity.RoleEntity;
 import edu.example.repository.RoleRepository;
+import edu.example.service.RoleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class RoleServiceImpl implements RoleService{
+public class RoleServiceImpl implements RoleService {
 
     private  final RoleRepository repository;
 

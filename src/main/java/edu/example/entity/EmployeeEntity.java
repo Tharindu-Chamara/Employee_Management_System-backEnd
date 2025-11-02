@@ -1,15 +1,18 @@
 package edu.example.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "employees")
-public class EmployeeEntity {
+public class  EmployeeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,8 +21,15 @@ public class EmployeeEntity {
     private String firstName;
     private String lastName;
     private String email;
-    private String departmentId;
-    private String roleId;
+
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<DepartmentEntity> department;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
+    private RoleEntity role;
 
 
 }
+
